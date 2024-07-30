@@ -1,0 +1,1019 @@
+openapi: 3.0.3
+info:
+  title: Workflo API
+  description: Workflo API for managing tasks and users for Workflo frontend
+  version: 1.0.0
+  contact:
+    email: aashishpal50@gmail.com
+    name: Ashish Pal
+    url: https://portfolio1109.netlify.app
+servers:
+  - url: http://localhost:5000/api
+    description: Local Development server
+tags:
+  - name: User
+    description: Endpoints to manage users
+  - name: Auth
+    description: Endpoints to manage users authentication
+  - name: Tasks
+    description: Endpoints to manage tasks
+
+components:
+  schemas:
+    # Error schemas
+    ClientError:
+      description: Validation error from server (400)
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Fields missing, Invalid ID, invalid access token
+        success:
+          type: boolean
+          description: Indicates whether the request was successful or not
+          example: false
+    ServerError:
+      description: Internal server error from server (500)
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Internal server error
+        success:
+          type: boolean
+          description: Indicates whether the request was successful or not
+          example: false
+    UnauthorizedError:
+      type: object
+      description: Unauthorized error when trying to access the server with invalid authorization.
+      properties:
+        message:
+          type: string
+          description: Error message indicating that the user is unauthorized.
+          example: Invalid credentials provided.
+        success:
+          type: boolean
+          description: The HTTP status code.Indicates whether the request was successful or not.
+          example: false
+    NotFoundError:
+      description: Resource error from server (404)
+      properties:
+        message:
+          type: string
+          description: Error message
+          example: Document not found or User not found
+        success:
+          type: boolean
+          description: Indicates whether the request was successful or not
+          example: false
+
+    # auth route schemas
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: The email of the user.
+          example: johndoe@example.com
+        password:
+          type: string
+          format: password
+          description: The password of the user.
+          example: mypassword123
+    LoginResponse:
+      type: object
+      properties:
+        success:
+          type: string
+          description: The status of request.
+          example: true or false
+        data:
+          description: The ID of the authenticated user.
+          $ref: "#/components/schemas/User"
+    LogoutResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            success:
+              type: string
+              description: The status of request.
+              example: true or false
+            message:
+              type: string
+              description: Additional message for the request
+              example: User logged out successfully.
+    SignupRequest:
+      description: Required user data to signup users
+      type: object
+      required:
+        - email
+        - password
+        - fullname
+        - confirmPassword
+      properties:
+        email:
+          type: string
+          description: Unique email for the user
+          example: johndoe@example.com
+        fullname:
+          type: string
+          description: Name of the user
+          example: John doe
+        password:
+          type: string
+          description: Password for the user
+          example: password@123
+        confirmPassword:
+          type: string
+          description: Confirm Password for the user
+          example: password@123
+    # user route schemas
+    User:
+      description: User's data object from server
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Unique identifier for the user, Mongoose ID
+          example: 66334b36354c1f9b14b8a54f
+        email:
+          type: string
+          description: Unique email for the user
+          example: johndoe@example.com
+        createdAt:
+          type: string
+          description: Timestamp at which user is created
+          example: "2021-04-20T12:00:00.000Z"
+        updatedAt:
+          type: string
+          description: Timestamp at which user is created
+          example: "2021-04-20T12:00:00.000Z"
+        fullname:
+          type: string
+          description: Name of the user
+          example: John doe
+      required:
+        - email
+        - fullname
+        - _id
+        - createdAt
+        - updatedAt
+    UserUpdate:
+      description: User's update data object required by server
+      type: object
+      properties:
+        fullname:
+          type: string
+          description: Name of the user
+    UserCreate:
+      description: User's create data object required by server
+      type: object
+      properties:
+        email:
+          type: string
+          description: Unique email for the user
+          example: johndoe, madeline73
+        fullname:
+          type: string
+          description: Name of the user
+        password:
+          type: string
+          description: Password chosen by the user
+        confirmPassword:
+          type: string
+          description: Same password
+      required:
+        - email
+        - password
+        - confirmPassword
+        - fullname
+    UserUpdatePassword:
+      description: User's update password data object required by server
+      type: object
+      properties:
+        oldPassword:
+          type: string
+          description: Previous password of user
+        newPassword:
+          type: string
+          description: New password of user
+      required:
+        - oldPassword
+        - newPassword
+
+    # task enums
+    ETaskStatus:
+      type: string
+      enum:
+        - Todo
+        - InProgress
+        - UnderReview
+        - Finished
+    ETaskPriority:
+      type: string
+      enum:
+        - Low
+        - Medium
+        - Urgent
+
+    # Tasks
+    Task:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: The unique identifier of the task.
+        assignee:
+          type: string
+          description: The ID of the user who created the task.
+        title:
+          type: string
+          description: The ID of the chat associated with the task.
+        description:
+          type: string
+          description: The content of the task.
+        status:
+          description: The status of the task.
+          $ref: "#/components/schemas/ETaskStatus"
+        priority:
+          description: The priority of the task.
+          $ref: "#/components/schemas/ETaskPriority"
+        deadline:
+          type: string
+          description: The ending date/time for the task.
+          example: "2021-04-20T12:00:00.000Z"
+        createdAt:
+          type: string
+          description: Timestamp at which user is created
+          example: "2021-04-20T12:00:00.000Z"
+        updatedAt:
+          type: string
+          description: Timestamp at which user is created
+          example: "2021-04-20T12:00:00.000Z"
+      required:
+        - title
+        - status
+      example:
+        _id: 60a97d22c4a9a314b8541a3c
+        title: Short Chore
+        description: Clean the home directory
+        status: InProgress
+        priority: Medium
+        deadline: "2022-05-22T12:00:00Z"
+        assignee: 60a97d22c4a9a314b8541a3d
+        createdAt: "2022-05-22T12:05:00Z"
+        updatedAt: "2022-05-22T12:03:00Z"
+
+    TaskCreate:
+      type: object
+      properties:
+        assignee:
+          type: string
+          description: The ID of the user who created the task.
+        title:
+          type: string
+          description: The ID of the chat associated with the task.
+        description:
+          type: string
+          description: The content of the task.
+        status:
+          description: The status of the task.
+          $ref: "#/components/schemas/ETaskStatus"
+        priority:
+          description: The priority of the task.
+          $ref: "#/components/schemas/ETaskPriority"
+        deadline:
+          type: string
+          description: The ending date/time for the task.
+          example: "2021-04-20T12:00:00.000Z"
+      required:
+        - title
+        - status
+      example:
+        title: Short Chore
+        description: Clean the home directory
+        status: InProgress
+        priority: Medium
+        deadline: "2022-05-22T12:00:00Z"
+        assignee: 60a97d22c4a9a314b8541a3d
+
+    TaskUpdate:
+      type: object
+      properties:
+        assignee:
+          type: string
+          description: The ID of the user who created the task.
+        title:
+          type: string
+          description: The ID of the chat associated with the task.
+        description:
+          type: string
+          description: The content of the task.
+        status:
+          description: The status of the task.
+          $ref: "#/components/schemas/ETaskStatus"
+        priority:
+          description: The priority of the task.
+          $ref: "#/components/schemas/ETaskPriority"
+        deadline:
+          type: string
+          description: The ending date/time for the task.
+          example: "2021-04-20T12:00:00.000Z"
+      example:
+        title: Short Chore
+        description: Clean the home directory
+        status: InProgress
+        priority: Medium
+        deadline: "2022-05-22T12:00:00Z"
+        assignee: 60a97d22c4a9a314b8541a3d
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: jwt
+
+  parameters:
+    LimitQueryParam:
+      name: limit
+      in: query
+      schema:
+        type: integer
+      description: Limit the number of results
+    PageNumberQueryParam:
+      name: pageNumber
+      in: query
+      schema:
+        type: integer
+        default: 1
+      description: Page number for pagination
+    DoPopulateQueryParam:
+      name: populate
+      in: query
+      schema:
+        type: boolean
+      description: Populate reference fields
+    SortByQueryParam:
+      name: sortBy
+      in: query
+      schema:
+        type: string
+        enum:
+          - createdAt
+          - updatedAt
+      description: Sort results by a field
+    SortOrderQueryParam:
+      name: sortOrder
+      in: query
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+      description: Sort order (ascending or descending)
+    NotQueryParam:
+      name: not
+      in: query
+      schema:
+        type: string
+      description: ID of the document not to be included in results
+paths:
+  # users routes
+  /users/{id}:
+    get:
+      summary: Get user
+      security:
+        - cookieAuth: []
+      description: Get a user with the specified id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/User"
+          description: User found with particular id and data returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Invalid id provided, not of mongoose ObjectID
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+          description: Unauthorized - Invalid credentials provided.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+          description: User not found with particular id
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+          description: Something happened wrong at server
+      tags:
+        - User
+    patch:
+      security:
+        - cookieAuth: []
+      description: Update a user with provided id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserUpdate"
+        required: true
+      responses:
+        "200":
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/User"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Invalid full name provided
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+          description: Unauthorized - Invalid credentials provided.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+          description: User not found with particular id
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+          description: Something happened wrong at server
+      tags:
+        - User
+    delete:
+      security:
+        - cookieAuth: []
+      description: Deletes a user with provided id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: User deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/User"
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+          description: Unauthorized - Invalid credentials provided.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+          description: User not found with particular id
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+          description: Something happened wrong at server
+      tags:
+        - User
+  /users:
+    post:
+      description: Creates a new user with the specified data
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserCreate"
+      security:
+        - cookieAuth: []
+      responses:
+        "201":
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/User"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Validation error because of either username already exists or confirmPassword and password is different or invalid role provided
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+          description: Something went wrong at server
+      tags:
+        - User
+  /users/query:
+    get:
+      description: Filter user from database based on provided parameters
+      security:
+        - cookieAuth: []
+      parameters:
+        - $ref: "#/components/parameters/LimitQueryParam"
+        - $ref: "#/components/parameters/PageNumberQueryParam"
+        - $ref: "#/components/parameters/DoPopulateQueryParam"
+        - $ref: "#/components/parameters/SortByQueryParam"
+        - $ref: "#/components/parameters/SortOrderQueryParam"
+        - $ref: "#/components/parameters/NotQueryParam"
+        - name: userId
+          in: query
+          schema:
+            type: string
+          description: ID of the user
+        - name: username
+          in: query
+          schema:
+            type: string
+          description: Username of the user
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/User"
+          description: Successful request and response is returned
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Validation error task
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Internal Server Error
+      tags:
+        - User
+  /users/{id}/password:
+    patch:
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserUpdatePassword"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/User"
+          description: Password updated successfully
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Validation error task e.g. Invalid old password
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+          description: Unauthorized - Invalid credentials provided.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+          description: Internal Server Error
+      tags:
+        - User
+
+  # authentication routes
+  # authentication routes
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: User login
+      description: Login a user with their username and password to receive an authentication token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Successful login
+          headers:
+            Set-Cookie:
+              description: JWT token returned in a cookie
+              schema:
+                type: string
+                example: jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..; HttpOnly; Path=/; Max-Age=<30 days>
+          content:
+            application/json:
+              schema:
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/LoginResponse"
+        "400":
+          description: Bad Request - Username and password are required.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+        "401":
+          description: Unauthorized - Invalid credentials provided.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "404":
+          description: Not Found - User not found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+  /auth/logout:
+    post:
+      tags:
+        - Auth
+      security:
+        - cookieAuth: []
+      summary: User logging out
+      description: Logouts a user by clearing their token from cookie.
+      responses:
+        "200":
+          description: Successful logout
+          content:
+            application/json:
+              schema:
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/LogoutResponse"
+        "401":
+          description: Unauthorized - Invalid credentials provided.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+  /auth/signup:
+    post:
+      tags:
+        - Auth
+      summary: User signup
+      description: Creates a new user with user data and returns the created user along with token in response cookie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupRequest"
+      responses:
+        "201":
+          description: Successful signup
+          headers:
+            Set-Cookie:
+              description: JWT token returned in a cookie
+              schema:
+                type: string
+                example: jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..; HttpOnly; Path=/; Max-Age=<30 days>
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+        "400":
+          description: Bad Request - User validation error.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+
+  # tasks routes
+  /tasks/query:
+    get:
+      summary: Get tasks by query
+      security:
+        - cookieAuth: []
+      parameters:
+        - $ref: "#/components/parameters/LimitQueryParam"
+        - $ref: "#/components/parameters/PageNumberQueryParam"
+        - $ref: "#/components/parameters/DoPopulateQueryParam"
+        - $ref: "#/components/parameters/SortByQueryParam"
+        - $ref: "#/components/parameters/SortOrderQueryParam"
+        - $ref: "#/components/parameters/NotQueryParam"
+        - in: query
+          name: taskId
+          schema:
+            type: string
+          description: ID of the task.
+        - in: query
+          name: assignee
+          schema:
+            type: string
+          description: ID of the user associated with the tasks
+      responses:
+        "200":
+          description: Successfully retrieved tasks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Task"
+        "401":
+          description: Unauthorized - Invalid credentials provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+      tags:
+        - Tasks
+  /tasks:
+    post:
+      summary: Create a new task
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TaskCreate"
+      responses:
+        "201":
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/Task"
+        "400":
+          description: Bad request - Invalid task data provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+        "401":
+          description: Unauthorized - Invalid credentials provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+      tags:
+        - Tasks
+  /tasks/{taskId}:
+    get:
+      summary: Get a task by ID
+      security:
+        - cookieAuth: []
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved the task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/Task"
+        "401":
+          description: Unauthorized - Invalid credentials provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "404":
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+      tags:
+        - Tasks
+    patch:
+      summary: Update a task by ID
+      security:
+        - cookieAuth: []
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TaskUpdate"
+      responses:
+        "200":
+          description: Task updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: "#/components/schemas/Task"
+        "400":
+          description: Bad request - Invalid task data provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientError"
+        "401":
+          description: Unauthorized - Invalid credentials provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "404":
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+      tags:
+        - Tasks
+    delete:
+      summary: Delete a task by ID
+      security:
+        - cookieAuth: []
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Task deleted successfully
+        "401":
+          description: Unauthorized - Invalid credentials provided
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "404":
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServerError"
+      tags:
+        - Tasks

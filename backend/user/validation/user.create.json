@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "fullname": { "type": "string" },
+    "email": { "type": "string" },
+    "password": {
+      "type": "string",
+      "minLength": 8,
+      "errorMessage": "Password should be at least 8 characters long"
+    },
+    "confirmPassword": {
+      "type": "string",
+      "minLength": 8,
+      "errorMessage": "Confirm password should be at least 8 characters long"
+    },
+
+    "profilePic": { "type": "string", "default": "" }
+  },
+  "required": ["fullname", "email", "password", "confirmPassword"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "properties": {
+        "password": { "const": { "$data": "1/confirmPassword" } }
+      },
+      "errorMessage": {
+        "properties": {
+          "password": "Password and confirm password must match"
+        }
+      }
+    }
+  ],
+  "errorMessage": {
+    "required": {
+      "fullname": "Full name is required",
+      "email": "Email is required",
+      "password": "Password is required",
+      "confirmPassword": "Confirm password is required"
+    },
+    "additionalProperties": "No additional properties are allowed"
+  }
+}

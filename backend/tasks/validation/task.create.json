@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "errorMessage": {
+        "type": "Title must be a string"
+      }
+    },
+    "description": {
+      "type": "string",
+      "errorMessage": {
+        "type": "Description must be a string"
+      }
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date-time",
+      "errorMessage": {
+        "type": "Deadline must be a string",
+        "format": "Deadline must be in date-time format (YYYY-MM-DDTHH:MM:SSZ)"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Todo", "InProgress", "Finished", "UnderReview"],
+      "errorMessage": {
+        "type": "Status must be a string",
+        "enum": "Status must be one of the following: Todo, InProgress, Finished, UnderReview"
+      }
+    },
+    "assignee": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{24}$",
+      "errorMessage": {
+        "type": "Assignee must be a string",
+        "pattern": "Assignee must be a valid ObjectId (24 hex characters)"
+      }
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["Low", "Medium", "Urgent"],
+      "errorMessage": {
+        "type": "Priority must be a string",
+        "enum": "Priority must be one of the following: Low, Medium, Urgent"
+      }
+    }
+  },
+  "required": ["title", "status"],
+  "additionalProperties": false,
+  "errorMessage": {
+    "required": {
+      "title": "Title is required",
+      "status": "Status is required"
+    },
+    "additionalProperties": "No additional properties are allowed"
+  }
+}

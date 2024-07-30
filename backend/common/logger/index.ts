@@ -4,13 +4,8 @@ import config from "@config";
 import errors = format.errors;
 
 const env = process.env.NODE_ENV || "development";
-const logDir = config.logDir;
-const logFile = path.join(logDir, "giffy_server.log");
-
-const getLabel = function (callingModule: { filename: string }) {
-  const parts = callingModule.filename.split("/");
-  return parts[parts.length - 2] + "/" + parts.pop();
-};
+const logDir = config.log.filepath;
+const logFile = path.join(logDir, config.log.filename);
 
 const customFormat = format.printf(
   ({ level, message, timestamp, service, ...temp }) => {
@@ -25,8 +20,8 @@ const customFormat = format.printf(
 );
 
 const logger = createLogger({
-  level: env === "development" ? "debug" : "info",
-  defaultMeta: { service: "Giffy Server" },
+  level: config.log.level,
+  defaultMeta: { service: "ChatAppYT Server" },
   format: format.combine(
     format.splat(),
     format.json(),

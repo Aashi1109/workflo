@@ -1,0 +1,107 @@
+{"asctime":"2024-07-29 20:36:46","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:40:22","level":"ERROR","service":"ChatAppYT Server","message":"Expected property name or '}' in JSON at position 3"}
+{"asctime":"2024-07-29 20:40:46","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 20:42:40","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:43:29","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:44:35","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:44:55","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:46:26","level":"ERROR","service":"ChatAppYT Server","message":"Expected double-quoted property name in JSON at position 74"}
+{"asctime":"2024-07-29 20:49:07","level":"ERROR","service":"ChatAppYT Server","message":"Route don't exists: /"}
+{"asctime":"2024-07-29 20:53:14","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:53:22","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-29 20:53:22","level":"DEBUG","service":"ChatAppYT Server","message":"required"}
+{"asctime":"2024-07-29 20:53:22","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:53:22","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:53:22","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:53:22","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"gender\",\"message\":\"must have required property 'gender'\"},{\"field\":\"unknown\",\"message\":\"No additional properties are allowed\"},{\"field\":\"unknown\",\"message\":\"Full name is required\"},{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-29 20:53:22","level":"ERROR","service":"ChatAppYT Server","message":"{\"status\":400,\"additionalInfo\":[{\"field\":\"gender\",\"message\":\"must have required property 'gender'\"},{\"field\":\"unknown\",\"message\":\"No additional properties are allowed\"},{\"field\":\"unknown\",\"message\":\"Full name is required\"},{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}],\"name\":\"ClientError\"}"}
+{"asctime":"2024-07-29 20:54:39","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:54:48","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-29 20:54:48","level":"DEBUG","service":"ChatAppYT Server","message":"required"}
+{"asctime":"2024-07-29 20:54:48","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:54:48","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:54:48","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"gender\",\"message\":\"must have required property 'gender'\"},{\"field\":\"unknown\",\"message\":\"Full name is required\"},{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-29 20:54:48","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-29 20:55:26","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:55:54","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 20:58:32","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-29 20:58:32","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:58:32","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:58:32","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"unknown\",\"message\":\"Full name is required\"},{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-29 20:58:32","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-29 20:58:55","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-29 20:58:55","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:58:55","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:58:55","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"unknown\",\"message\":\"Full name is required\"},{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-29 20:58:55","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-29 20:59:49","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-29 20:59:49","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 20:59:49","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-29 20:59:49","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-29 21:00:16","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-29 21:01:01","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:01:41","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-29 21:01:41","level":"ERROR","service":"ChatAppYT Server","message":"User with email: 'test@example.com' already exists"}
+{"asctime":"2024-07-29 21:03:45","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:03:52","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-29 21:03:52","level":"ERROR","service":"ChatAppYT Server","message":"User with email: 'test@example.com' already exists"}
+{"asctime":"2024-07-29 21:05:15","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:06:52","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:09:58","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:13:59","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:14:11","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:14:56","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:19:09","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:19:18","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:19:23","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:22:14","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:23:21","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:24:09","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:25:44","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:26:56","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-29 21:26:56","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 21:26:56","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-29 21:26:56","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"password\",\"message\":\"Password and confirm password must match\"},{\"field\":\"confirmPassword\",\"message\":\"Confirm password should be at least 8 characters long\"}]"}
+{"asctime":"2024-07-29 21:26:56","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-29 21:27:25","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-29 21:27:26","level":"ERROR","service":"ChatAppYT Server","message":"E11000 duplicate key error collection: chatappyt.users index: username_1 dup key: { username: null }"}
+{"asctime":"2024-07-29 21:29:12","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:29:20","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-29 21:40:07","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-29 21:41:03","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:42:03","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:07","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:45","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:48","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:49","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:49","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:49","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:46:49","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:47:45","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:47:50","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:47:53","level":"DEBUG","service":"ChatAppYT Server","message":"undefined"}
+{"asctime":"2024-07-29 21:47:53","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:48:10","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:48:10","level":"DEBUG","service":"ChatAppYT Server","message":"{\"host\":\"localhost:5000\",\"connection\":\"keep-alive\",\"sec-ch-ua\":\"\\\"Not)A;Brand\\\";v=\\\"99\\\", \\\"Google Chrome\\\";v=\\\"127\\\", \\\"Chromium\\\";v=\\\"127\\\"\",\"accept\":\"application/json\",\"dnt\":\"1\",\"sec-ch-ua-mobile\":\"?0\",\"user-agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\"sec-ch-ua-platform\":\"\\\"Windows\\\"\",\"sec-fetch-site\":\"same-origin\",\"sec-fetch-mode\":\"cors\",\"sec-fetch-dest\":\"empty\",\"accept-encoding\":\"gzip, deflate, br, zstd\",\"accept-language\":\"en-GB,en-US;q=0.9,en;q=0.8,hi;q=0.7\",\"cookie\":\"jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwiZnVsbG5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiX2lkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0IiwiX192IjoiaW5pdCJ9LCJzdGF0ZXMiOnsicmVxdWlyZSI6e30sImluaXQiOnsiX2lkIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiZnVsbG5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJjcmVhdGVkQXQiOnRydWUsInVwZGF0ZWRBdCI6dHJ1ZSwiX192Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY2YTdiYzU4NmQwZGFjMTcxZWQ2YzI0OCIsImVtYWlsIjoiam9obmRvZUBleGFtcGxlLmNvbSIsImZ1bGxuYW1lIjoiSm9obiBkb2UiLCJwYXNzd29yZCI6IiQyYSQxMCRaVC55dGFVZ1ozekhyOGRkSGN4R00uSEU1ODRQdEdlNE1jUmpZVTdQclNvNHN2OVZjSG1RMiIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsIl9fdiI6MH0sImlhdCI6MTcyMjI2OTA3OSwiZXhwIjoxNzI0ODYxMDc5fQ.7YSXf1diPQ_6PAYiJ8DVUuTnho9yIPhJbdM1pBUmDS0\"}"}
+{"asctime":"2024-07-29 21:48:10","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:49:45","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:49:52","level":"DEBUG","service":"ChatAppYT Server","message":"{\"host\":\"localhost:5000\",\"connection\":\"keep-alive\",\"sec-ch-ua\":\"\\\"Not)A;Brand\\\";v=\\\"99\\\", \\\"Google Chrome\\\";v=\\\"127\\\", \\\"Chromium\\\";v=\\\"127\\\"\",\"accept\":\"application/json\",\"dnt\":\"1\",\"sec-ch-ua-mobile\":\"?0\",\"user-agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\"sec-ch-ua-platform\":\"\\\"Windows\\\"\",\"sec-fetch-site\":\"same-origin\",\"sec-fetch-mode\":\"cors\",\"sec-fetch-dest\":\"empty\",\"accept-encoding\":\"gzip, deflate, br, zstd\",\"accept-language\":\"en-GB,en-US;q=0.9,en;q=0.8,hi;q=0.7\",\"cookie\":\"jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwiZnVsbG5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiX2lkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0IiwiX192IjoiaW5pdCJ9LCJzdGF0ZXMiOnsicmVxdWlyZSI6e30sImluaXQiOnsiX2lkIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiZnVsbG5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJjcmVhdGVkQXQiOnRydWUsInVwZGF0ZWRBdCI6dHJ1ZSwiX192Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY2YTdiYzU4NmQwZGFjMTcxZWQ2YzI0OCIsImVtYWlsIjoiam9obmRvZUBleGFtcGxlLmNvbSIsImZ1bGxuYW1lIjoiSm9obiBkb2UiLCJwYXNzd29yZCI6IiQyYSQxMCRaVC55dGFVZ1ozekhyOGRkSGN4R00uSEU1ODRQdEdlNE1jUmpZVTdQclNvNHN2OVZjSG1RMiIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsIl9fdiI6MH0sImlhdCI6MTcyMjI2OTA3OSwiZXhwIjoxNzI0ODYxMDc5fQ.7YSXf1diPQ_6PAYiJ8DVUuTnho9yIPhJbdM1pBUmDS0\"}"}
+{"asctime":"2024-07-29 21:49:52","level":"ERROR","service":"ChatAppYT Server","message":"Cannot read properties of undefined (reading 'jwt')"}
+{"asctime":"2024-07-29 21:51:51","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:52:57","level":"DEBUG","service":"ChatAppYT Server","message":"{\"jwt\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwiZnVsbG5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiX2lkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0IiwiX192IjoiaW5pdCJ9LCJzdGF0ZXMiOnsicmVxdWlyZSI6e30sImluaXQiOnsiX2lkIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiZnVsbG5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJjcmVhdGVkQXQiOnRydWUsInVwZGF0ZWRBdCI6dHJ1ZSwiX192Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY2YTdiYzU4NmQwZGFjMTcxZWQ2YzI0OCIsImVtYWlsIjoiam9obmRvZUBleGFtcGxlLmNvbSIsImZ1bGxuYW1lIjoiSm9obiBkb2UiLCJwYXNzd29yZCI6IiQyYSQxMCRaVC55dGFVZ1ozekhyOGRkSGN4R00uSEU1ODRQdEdlNE1jUmpZVTdQclNvNHN2OVZjSG1RMiIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsIl9fdiI6MH0sImlhdCI6MTcyMjI2OTA3OSwiZXhwIjoxNzI0ODYxMDc5fQ.7YSXf1diPQ_6PAYiJ8DVUuTnho9yIPhJbdM1pBUmDS0\"}"}
+{"asctime":"2024-07-29 21:52:57","level":"ERROR","service":"ChatAppYT Server","message":"Cannot read properties of undefined (reading 'jwt')"}
+{"asctime":"2024-07-29 21:53:24","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:53:37","level":"DEBUG","service":"ChatAppYT Server","message":"{\"jwt\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwiZnVsbG5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiX2lkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0IiwiX192IjoiaW5pdCJ9LCJzdGF0ZXMiOnsicmVxdWlyZSI6e30sImluaXQiOnsiX2lkIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiZnVsbG5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJjcmVhdGVkQXQiOnRydWUsInVwZGF0ZWRBdCI6dHJ1ZSwiX192Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY2YTdiYzU4NmQwZGFjMTcxZWQ2YzI0OCIsImVtYWlsIjoiam9obmRvZUBleGFtcGxlLmNvbSIsImZ1bGxuYW1lIjoiSm9obiBkb2UiLCJwYXNzd29yZCI6IiQyYSQxMCRaVC55dGFVZ1ozekhyOGRkSGN4R00uSEU1ODRQdEdlNE1jUmpZVTdQclNvNHN2OVZjSG1RMiIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsIl9fdiI6MH0sImlhdCI6MTcyMjI2OTA3OSwiZXhwIjoxNzI0ODYxMDc5fQ.7YSXf1diPQ_6PAYiJ8DVUuTnho9yIPhJbdM1pBUmDS0\"}"}
+{"asctime":"2024-07-29 21:53:37","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:54:18","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:54:18","level":"DEBUG","service":"ChatAppYT Server","message":"ls{\"jwt\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwiZnVsbG5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiX2lkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0IiwiX192IjoiaW5pdCJ9LCJzdGF0ZXMiOnsicmVxdWlyZSI6e30sImluaXQiOnsiX2lkIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiZnVsbG5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJjcmVhdGVkQXQiOnRydWUsInVwZGF0ZWRBdCI6dHJ1ZSwiX192Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY2YTdiYzU4NmQwZGFjMTcxZWQ2YzI0OCIsImVtYWlsIjoiam9obmRvZUBleGFtcGxlLmNvbSIsImZ1bGxuYW1lIjoiSm9obiBkb2UiLCJwYXNzd29yZCI6IiQyYSQxMCRaVC55dGFVZ1ozekhyOGRkSGN4R00uSEU1ODRQdEdlNE1jUmpZVTdQclNvNHN2OVZjSG1RMiIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsIl9fdiI6MH0sImlhdCI6MTcyMjI2OTA3OSwiZXhwIjoxNzI0ODYxMDc5fQ.7YSXf1diPQ_6PAYiJ8DVUuTnho9yIPhJbdM1pBUmDS0\"}"}
+{"asctime":"2024-07-29 21:54:18","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:55:02","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:55:06","level":"DEBUG","service":"ChatAppYT Server","message":"\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwiZnVsbG5hbWUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwiX2lkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0IiwiX192IjoiaW5pdCJ9LCJzdGF0ZXMiOnsicmVxdWlyZSI6e30sImluaXQiOnsiX2lkIjp0cnVlLCJlbWFpbCI6dHJ1ZSwiZnVsbG5hbWUiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJjcmVhdGVkQXQiOnRydWUsInVwZGF0ZWRBdCI6dHJ1ZSwiX192Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY2YTdiYzU4NmQwZGFjMTcxZWQ2YzI0OCIsImVtYWlsIjoiam9obmRvZUBleGFtcGxlLmNvbSIsImZ1bGxuYW1lIjoiSm9obiBkb2UiLCJwYXNzd29yZCI6IiQyYSQxMCRaVC55dGFVZ1ozekhyOGRkSGN4R00uSEU1ODRQdEdlNE1jUmpZVTdQclNvNHN2OVZjSG1RMiIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDctMjlUMTU6NTk6MjAuOTE5WiIsIl9fdiI6MH0sImlhdCI6MTcyMjI2OTA3OSwiZXhwIjoxNzI0ODYxMDc5fQ.7YSXf1diPQ_6PAYiJ8DVUuTnho9yIPhJbdM1pBUmDS0\""}
+{"asctime":"2024-07-29 21:55:06","level":"ERROR","service":"ChatAppYT Server","message":"Missing or invalid token"}
+{"asctime":"2024-07-29 21:56:49","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:56:53","level":"ERROR","service":"ChatAppYT Server","message":"Unauthorized access not allowed"}
+{"asctime":"2024-07-29 21:57:27","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 21:59:25","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 22:00:19","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-29 22:01:20","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}

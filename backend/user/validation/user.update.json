@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "fullname": {
+      "type": "string",
+      "pattern": "^\\S(.*\\S)?$",
+      "errorMessage": "Full name cannot be only spaces"
+    }
+  }
+}

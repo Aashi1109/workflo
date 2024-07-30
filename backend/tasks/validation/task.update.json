@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "pattern": "^\\S(.*\\S)?$",
+      "errorMessage": {
+        "type": "Title must be a string",
+        "pattern": "Title cannot be only whitespace"
+      }
+    },
+    "description": {
+      "type": "string",
+      "pattern": "^\\S(.*\\S)?$",
+      "errorMessage": {
+        "type": "Description must be a string",
+        "pattern": "Description cannot be only whitespace"
+      }
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date-time",
+      "errorMessage": {
+        "type": "Deadline must be a string",
+        "format": "Deadline must be in date-time format (YYYY-MM-DDTHH:MM:SSZ)"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Todo", "InProgress", "Finished", "UnderReview"],
+      "errorMessage": {
+        "type": "Status must be a string",
+        "enum": "Status must be one of the following: Todo, InProgress, Finished, UnderReview"
+      }
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["Low", "Medium", "Urgent"],
+      "errorMessage": {
+        "type": "Priority must be a string",
+        "enum": "Priority must be one of the following: Low, Medium, Urgent"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "errorMessage": {
+    "additionalProperties": "No additional properties are allowed"
+  }
+}
