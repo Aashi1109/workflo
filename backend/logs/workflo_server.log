@@ -105,3 +105,26 @@
 {"asctime":"2024-07-29 21:59:25","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
 {"asctime":"2024-07-29 22:00:19","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
 {"asctime":"2024-07-29 22:01:20","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-30 09:44:35","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-30 09:50:24","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-30 09:55:54","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-30 09:56:25","level":"ERROR","service":"ChatAppYT Server","message":"Route doesn't exists: /"}
+{"asctime":"2024-07-30 09:56:45","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-30 10:01:11","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-30 10:01:11","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-30 10:01:11","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-30 10:01:11","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-30 10:01:11","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-30 10:01:11","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"unknown\",\"message\":\"Full name is required\"},{\"field\":\"unknown\",\"message\":\"Email is required\"},{\"field\":\"unknown\",\"message\":\"Password is required\"},{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-30 10:01:11","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-30 10:01:28","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-30 10:01:28","level":"ERROR","service":"ChatAppYT Server","message":"User with email: 'johndoe@example.com' already exists"}
+{"asctime":"2024-07-30 10:02:19","level":"ERROR","service":"ChatAppYT Server","message":"Route doesn't exists: /"}
+{"asctime":"2024-07-30 10:02:25","level":"ERROR","service":"ChatAppYT Server","message":"Route doesn't exists: /"}
+{"asctime":"2024-07-30 10:05:11","level":"ERROR","service":"ChatAppYT Server","message":"Missing authentication token"}
+{"asctime":"2024-07-30 10:05:41","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-30 10:06:24","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: true"}
+{"asctime":"2024-07-30 10:07:45","level":"DEBUG","service":"ChatAppYT Server","message":"user.update schema validation result: true"}
+{"asctime":"2024-07-30 10:10:00","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-30 10:10:59","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-30 10:11:29","level":"DEBUG","service":"ChatAppYT Server","message":"user.update schema validation result: true"}

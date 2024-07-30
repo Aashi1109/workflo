@@ -23,7 +23,7 @@ class TaskService {
    * @returns {Promise<ITask | null>} The task, or null if not found.
    */
   static async getById(id: string): Promise<ITask | null> {
-    return await Task.findById(id);
+    return await Task.findById(id).lean();
   }
 
   /**
@@ -33,7 +33,7 @@ class TaskService {
    * @returns {Promise<ITask | null>} The updated task, or null if not found.
    */
   static async update(id: string, data: Partial<ITask>): Promise<ITask | null> {
-    return await Task.findByIdAndUpdate(id, data, { new: true });
+    return await Task.findByIdAndUpdate(id, data, { new: true }).lean();
   }
 
   /**
@@ -42,7 +42,7 @@ class TaskService {
    * @returns {Promise<ITask | null>} The deleted task, or null if not found.
    */
   static async delete(id: string): Promise<ITask | null> {
-    return await Task.findByIdAndDelete(id);
+    return await Task.findByIdAndDelete(id).lean();
   }
 
   /**

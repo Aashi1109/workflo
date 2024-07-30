@@ -18,7 +18,7 @@ class UserService {
     email: string,
     safe: boolean = true
   ): Promise<IUser | null> {
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ email: email }).lean();
     return user ? (safe ? getSafeUser(user) : user) : null;
   }
 
@@ -32,8 +32,8 @@ class UserService {
     id: string,
     safe: boolean = true
   ): Promise<IUser | null> {
-    const user = await User.findById(id);
-    return user ? (safe ? getSafeUser(user.toObject()) : user) : null;
+    const user = await User.findById(id).lean();
+    return user ? (safe ? getSafeUser(user) : user) : null;
   }
 
   /**
@@ -58,7 +58,7 @@ class UserService {
     id: string,
     safe: boolean = true
   ): Promise<IUser | null> {
-    const user = await User.findByIdAndDelete(id);
+    const user = await User.findByIdAndDelete(id).lean();
     return user ? (safe ? getSafeUser(user) : user) : null;
   }
 
@@ -74,7 +74,7 @@ class UserService {
     data: Partial<IUser>,
     safe: boolean = true
   ): Promise<IUser | null> {
-    const user = await User.findByIdAndUpdate(id, data, { new: true });
+    const user = await User.findByIdAndUpdate(id, data, { new: true }).lean();
     return user ? (safe ? getSafeUser(user) : user) : null;
   }
 

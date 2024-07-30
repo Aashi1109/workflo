@@ -47,7 +47,7 @@ app.use(config.api.prefixPath + "/users", [checkJwt], usersRouter);
 app.use(
   "*",
   asyncHandler(async (req, res) => {
-    throw new NotFoundError(`Route don\'t exists: ${req.path}`);
+    throw new NotFoundError(`Route doesn't exists: ${req.path}`);
   })
 );
 // error handler routes
