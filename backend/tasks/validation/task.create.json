@@ -29,14 +29,6 @@
         "enum": "Status must be one of the following: Todo, InProgress, Finished, UnderReview"
       }
     },
-    "assignee": {
-      "type": "string",
-      "pattern": "^[0-9a-fA-F]{24}$",
-      "errorMessage": {
-        "type": "Assignee must be a string",
-        "pattern": "Assignee must be a valid ObjectId (24 hex characters)"
-      }
-    },
     "priority": {
       "type": "string",
       "enum": ["Low", "Medium", "Urgent"],

@@ -15,9 +15,11 @@ import { Router } from "express";
 
 const router = Router();
 
-router
-  .route("/")
-  .post([normalizeRequestBody, validateTaskCreate], asyncHandler(createTask));
+router.post(
+  "/:userId",
+  [normalizeRequestBody, validateTaskCreate],
+  asyncHandler(createTask)
+);
 
 router.get(
   "/query",
@@ -26,7 +28,7 @@ router.get(
 );
 
 router
-  .route("/:id")
+  .route("/:userId/:id")
   .get(asyncHandler(getTaskById))
   .patch(
     [normalizeRequestBody, validateTaskUpdate],

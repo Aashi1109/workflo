@@ -128,3 +128,24 @@
 {"asctime":"2024-07-30 10:10:00","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
 {"asctime":"2024-07-30 10:10:59","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
 {"asctime":"2024-07-30 10:11:29","level":"DEBUG","service":"ChatAppYT Server","message":"user.update schema validation result: true"}
+{"asctime":"2024-07-31 20:24:07","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-31 21:03:33","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-07-31 21:04:49","level":"DEBUG","service":"ChatAppYT Server","message":"user.create schema validation result: false"}
+{"asctime":"2024-07-31 21:04:49","level":"DEBUG","service":"ChatAppYT Server","message":"errorMessage"}
+{"asctime":"2024-07-31 21:04:49","level":"DEBUG","service":"ChatAppYT Server","message":"[{\"field\":\"unknown\",\"message\":\"Confirm password is required\"}]"}
+{"asctime":"2024-07-31 21:04:49","level":"ERROR","service":"ChatAppYT Server","message":"user.create field validation failed"}
+{"asctime":"2024-07-31 21:06:36","level":"ERROR","service":"ChatAppYT Server","message":"User with email aashishpal50@gmail.com not found"}
+{"asctime":"2024-08-06 22:05:39","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-06 22:07:12","level":"ERROR","service":"ChatAppYT Server","message":"Invalid credentials"}
+{"asctime":"2024-08-06 22:07:34","level":"ERROR","service":"ChatAppYT Server","message":"Invalid credentials"}
+{"asctime":"2024-08-06 22:10:38","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-06 22:11:42","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-06 22:15:39","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-06 22:22:11","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-09 22:11:01","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-10 18:49:00","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-10 18:58:18","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-10 19:09:02","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-11 12:26:07","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-08-11 13:11:07","level":"ERROR","service":"ChatAppYT Server","message":"User with email admin@example.com not found"}
+{"asctime":"2024-08-11 14:39:55","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}

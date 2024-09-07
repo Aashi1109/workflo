@@ -272,9 +272,6 @@ components:
     TaskCreate:
       type: object
       properties:
-        assignee:
-          type: string
-          description: The ID of the user who created the task.
         title:
           type: string
           description: The ID of the chat associated with the task.
@@ -300,14 +297,10 @@ components:
         status: InProgress
         priority: Medium
         deadline: "2022-05-22T12:00:00Z"
-        assignee: 60a97d22c4a9a314b8541a3d
 
     TaskUpdate:
       type: object
       properties:
-        assignee:
-          type: string
-          description: The ID of the user who created the task.
         title:
           type: string
           description: The ID of the chat associated with the task.
@@ -330,7 +323,6 @@ components:
         status: InProgress
         priority: Medium
         deadline: "2022-05-22T12:00:00Z"
-        assignee: 60a97d22c4a9a314b8541a3d
   securitySchemes:
     cookieAuth:
       type: apiKey
@@ -670,7 +662,6 @@ paths:
         - User
 
   # authentication routes
-  # authentication routes
   /auth/login:
     post:
       tags:
@@ -695,12 +686,7 @@ paths:
           content:
             application/json:
               schema:
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    $ref: "#/components/schemas/LoginResponse"
+                $ref: "#/components/schemas/LoginResponse"
         "400":
           description: Bad Request - Username and password are required.
           content:
@@ -733,12 +719,7 @@ paths:
           content:
             application/json:
               schema:
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    $ref: "#/components/schemas/LogoutResponse"
+                $ref: "#/components/schemas/LogoutResponse"
         "401":
           description: Unauthorized - Invalid credentials provided.
           content:
@@ -841,11 +822,17 @@ paths:
                 $ref: "#/components/schemas/ServerError"
       tags:
         - Tasks
-  /tasks:
+  /tasks/{userId}:
     post:
       summary: Create a new task
       security:
         - cookieAuth: []
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -885,7 +872,7 @@ paths:
                 $ref: "#/components/schemas/ServerError"
       tags:
         - Tasks
-  /tasks/{taskId}:
+  /tasks/{userId}/{taskId}:
     get:
       summary: Get a task by ID
       security:
@@ -893,6 +880,11 @@ paths:
       parameters:
         - in: path
           name: taskId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
           required: true
           schema:
             type: string
@@ -936,6 +928,11 @@ paths:
       parameters:
         - in: path
           name: taskId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
           required: true
           schema:
             type: string
@@ -991,6 +988,11 @@ paths:
       parameters:
         - in: path
           name: taskId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
           required: true
           schema:
             type: string

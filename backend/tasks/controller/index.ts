@@ -11,9 +11,10 @@ import { Request, Response } from "express";
  * @param {Response} res - The response object.
  */
 export const createTask = async (req: Request, res: Response) => {
-  const { assignee, status, description, priority, title, deadline } = req.body;
+  const { userId } = req.params;
+  const { status, description, priority, title, deadline } = req.body;
   const task = await TaskService.create({
-    assignee,
+    assignee: userId as any,
     status,
     description,
     priority,
@@ -29,8 +30,8 @@ export const createTask = async (req: Request, res: Response) => {
  * @param {Response} res - The response object.
  */
 export const getTaskById = async (req: Request, res: Response) => {
-  const taskId = req.params.taskId;
-  const task = await TaskService.getById(taskId);
+  const { taskId, userId } = req.params;
+  const task = await TaskService.getById(taskId, userId);
 
   if (!task) {
     throw new NotFoundError(`Task with taskId ${taskId} not found`);
@@ -44,15 +45,15 @@ export const getTaskById = async (req: Request, res: Response) => {
  * @param {Response} res - The response object.
  */
 export const updateTaskById = async (req: Request, res: Response) => {
-  const taskId = req.params.taskId;
+  const { taskId, userId } = req.params;
 
   const { priority, deadline, status, description, title } = req.body;
-  const existingTask = await TaskService.getById(taskId);
+  const existingTask = await TaskService.getById(taskId, userId);
 
   if (!existingTask)
     throw new NotFoundError(`Task with taskId ${taskId} not found`);
 
-  const updatedTask = await TaskService.update(taskId, {
+  const updatedTask = await TaskService.update(taskId, userId, {
     priority: priority || existingTask.priority,
     deadline: deadline || existingTask.deadline,
     description: description || existingTask.description,
@@ -69,13 +70,13 @@ export const updateTaskById = async (req: Request, res: Response) => {
  * @param {Response} res - The response object.
  */
 export const deleteTaskById = async (req: Request, res: Response) => {
-  const taskId = req.params.taskId;
-  const task = await TaskService.getById(taskId);
+  const { taskId, userId } = req.params;
+  const task = await TaskService.getById(taskId, userId);
 
   if (!task) {
     throw new NotFoundError(`Task with taskId ${taskId} not found`);
   }
-  const deletedTask = await TaskService.delete(taskId);
+  const deletedTask = await TaskService.delete(taskId, userId);
   return res.json({ data: deletedTask, success: true });
 };
 
@@ -87,4 +88,6 @@ export const filterTasks = async (req: IRequestPagination, res: Response) => {
     req.pagination,
     not
   );
+
+  return tasks;
 };

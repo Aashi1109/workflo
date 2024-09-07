@@ -6,8 +6,8 @@ import * as cors from "cors";
 import * as express from "express";
 import helmet from "helmet";
 import * as morgan from "morgan";
-import * as YAML from "yamljs";
 import * as swaggerUI from "swagger-ui-express";
+import * as YAML from "yamljs";
 
 import { authRouter } from "@auth";
 import { tasksRouter } from "@tasks";
@@ -16,7 +16,7 @@ import * as path from "path";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: ["http://localhost:3000"] }));
 app.use(morgan("dev"));
 app.use(helmet());
 
