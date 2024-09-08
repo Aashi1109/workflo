@@ -20,3 +20,7 @@ export enum ETaskPriority {
   Medium = "Medium",
   Urgent = "Urgent",
 }
+
+export enum EDraggables {
+  Task = "Task",
+}

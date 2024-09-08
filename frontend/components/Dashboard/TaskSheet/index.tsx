@@ -1,5 +1,9 @@
+"use client";
+
 import { ETaskPriority, ETaskStatus, ITask } from "@/types";
 import TaskColumn from "./TaskColumn";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const _TASK_SHEET_COLUMNS = [
   {
@@ -100,17 +104,19 @@ const dummyTasks: ITask[] = [
 ];
 const TaskSheet = () => {
   return (
-    <section className="bg-white bor-3 flex gap-[--Size-S] p-[var(--Size-S)] h-[calc(100vh-290px)]">
-      {_TASK_SHEET_COLUMNS.map((_column, index) => (
-        <TaskColumn
-          key={index}
-          columnIdentifier={_column.accessor}
-          header={_column.Header}
-          widthPercent={_column.width}
-          tasks={dummyTasks}
-        />
-      ))}
-    </section>
+    <DndProvider backend={HTML5Backend}>
+      <section className="bg-white bor-3 flex gap-[--Size-S] p-[var(--Size-S)] h-[calc(100vh-290px)]">
+        {_TASK_SHEET_COLUMNS.map((_column, index) => (
+          <TaskColumn
+            key={index}
+            columnIdentifier={_column.accessor}
+            header={_column.Header}
+            widthPercent={_column.width}
+            tasks={dummyTasks}
+          />
+        ))}
+      </section>
+    </DndProvider>
   );
 };
 
