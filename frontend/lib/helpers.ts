@@ -1,3 +1,5 @@
+import { ETaskStatus } from "@/types";
+
 export function parseCookie(cookieString: string) {
   const cookieParts = cookieString.split("; ").map((part) => part.trim());
 
@@ -32,3 +34,35 @@ export function parseCookie(cookieString: string) {
     options,
   };
 }
+
+export const canDropTaskInColumn = (
+  columnIdentifier: ETaskStatus,
+  taskType: ETaskStatus
+) => {
+  switch (taskType) {
+    case ETaskStatus.Todo:
+      return columnIdentifier !== ETaskStatus.Todo;
+    case ETaskStatus.Finished:
+      return columnIdentifier === ETaskStatus.Todo;
+    case ETaskStatus.InProgress:
+      return [ETaskStatus.UnderReview, ETaskStatus.Finished].includes(
+        columnIdentifier
+      );
+    case ETaskStatus.UnderReview:
+      return columnIdentifier !== ETaskStatus.UnderReview;
+    default:
+      return false;
+  }
+};
+
+export const createQueryParams = (queryData: { [key: string]: any }) => {
+  let queryUrl = "";
+  Object.entries(queryData).forEach(([key, value]) => {
+    if (value) {
+      queryUrl += `${queryUrl.length ? "&" : "?"}${key}=${encodeURIComponent(
+        value
+      )}`;
+    }
+  });
+  return queryUrl;
+};

@@ -151,3 +151,4 @@
 {"asctime":"2024-08-11 14:39:55","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
 {"asctime":"2024-09-08 09:44:49","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
 {"asctime":"2024-09-08 09:51:02","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}
+{"asctime":"2024-09-21 21:45:14","level":"INFO","service":"ChatAppYT Server","message":"Server started on http://localhost:5000"}

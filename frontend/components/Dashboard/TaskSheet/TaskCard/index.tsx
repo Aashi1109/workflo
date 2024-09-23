@@ -1,5 +1,6 @@
 import { ETaskPriority, ITask } from "@/types";
 import TaskDetails from "./TaskDetails";
+import TaskDraggableWrapper from "./TaskDraggableWrapper";
 
 interface IProps {
   task: ITask;
@@ -17,7 +18,11 @@ const getTaskChipVariant = (priority: ETaskPriority) => {
 };
 const TaskCard = ({ task }: IProps) => {
   const chipVariant = getTaskChipVariant(task.priority);
-  return <TaskDetails task={task} chipVariant={chipVariant} />;
+  return (
+    <TaskDraggableWrapper taskId={task.id} taskStatus={task.status}>
+      <TaskDetails task={task} chipVariant={chipVariant} />
+    </TaskDraggableWrapper>
+  );
 };
 
 export default TaskCard;

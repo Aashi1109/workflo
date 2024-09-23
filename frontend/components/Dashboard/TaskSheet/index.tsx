@@ -4,26 +4,27 @@ import { ETaskPriority, ETaskStatus, ITask } from "@/types";
 import TaskColumn from "./TaskColumn";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { useState } from "react";
 
 const _TASK_SHEET_COLUMNS = [
   {
     Header: "To do",
-    accessor: ETaskStatus.Todo,
+    identifier: ETaskStatus.Todo,
     width: "25%",
   },
   {
     Header: "In Progress",
-    accessor: ETaskStatus.InProgress,
+    identifier: ETaskStatus.InProgress,
     width: "25%",
   },
   {
     Header: "Under review",
-    accessor: ETaskStatus.UnderReview,
+    identifier: ETaskStatus.UnderReview,
     width: "25%",
   },
   {
     Header: "Finished",
-    accessor: ETaskStatus.Finished,
+    identifier: ETaskStatus.Finished,
     width: "25%",
   },
 ];
@@ -102,19 +103,46 @@ const dummyTasks: ITask[] = [
     assignee: "Hannah Martinez",
   },
 ];
+
+const initializeTasks = (
+  columns: Array<(typeof _TASK_SHEET_COLUMNS)[0]>,
+  tasks: ITask[]
+) => {
+  const returnResult = new Map(
+    columns.map((column) => [column.identifier, []])
+  );
+
+  for (const task of tasks) {
+    if (returnResult.has(task.status)) {
+      returnResult.get(task.status)!.push(task);
+    }
+  }
+
+  return Object.fromEntries(returnResult);
+};
+
 const TaskSheet = () => {
+  const [columnData, setColumnData] = useState(
+    initializeTasks(_TASK_SHEET_COLUMNS, dummyTasks)
+  );
   return (
     <DndProvider backend={HTML5Backend}>
       <section className="bg-white bor-3 flex gap-[--Size-S] p-[var(--Size-S)] h-[calc(100vh-290px)]">
-        {_TASK_SHEET_COLUMNS.map((_column, index) => (
-          <TaskColumn
-            key={index}
-            columnIdentifier={_column.accessor}
-            header={_column.Header}
-            widthPercent={_column.width}
-            tasks={dummyTasks}
-          />
-        ))}
+        {Object.entries(columnData).map(([status, tasks]) => {
+          const column = _TASK_SHEET_COLUMNS.find(
+            (col) => col.identifier === status
+          );
+          return column ? (
+            <TaskColumn
+              key={status}
+              columnIdentifier={status as ETaskStatus}
+              header={column.Header}
+              widthPercent={column.width}
+              tasks={tasks}
+              setColumnData={setColumnData}
+            />
+          ) : null;
+        })}
       </section>
     </DndProvider>
   );
